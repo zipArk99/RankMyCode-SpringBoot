@@ -1,6 +1,4 @@
 package com.Package.RankMyCode.Collections;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.mongodb.core.mapping.Document;
 

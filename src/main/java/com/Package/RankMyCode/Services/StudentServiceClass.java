@@ -3,6 +3,7 @@ package com.Package.RankMyCode.Services;
 import com.Package.RankMyCode.Collections.Student;
 import com.Package.RankMyCode.Repositary.StudentRepositary;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.util.MongoDbErrorCodes;
 import org.springframework.stereotype.Service;
 
 
@@ -15,8 +16,11 @@ public class StudentServiceClass implements  StudentServiceInterface{
     @Override
     public String addStudent(Student student)
     {
-
-        return  studentRepositary.save(student).getUserName();
+        try {
+            return studentRepositary.save(student).getUserName();
+        }catch (Exception exception){
+            return "error occured ::"+exception;
+        }
 
     }
 }
