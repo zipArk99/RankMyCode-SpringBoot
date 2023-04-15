@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "student")
+@Document(collection = "student")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Student {
     @Id

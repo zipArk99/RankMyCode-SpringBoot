@@ -4,7 +4,7 @@ package com.Package.RankMyCode.Collections;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "studentCredentials")
+@Document(collection = "studentCredentials")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StudentCredentials {
     private String email;

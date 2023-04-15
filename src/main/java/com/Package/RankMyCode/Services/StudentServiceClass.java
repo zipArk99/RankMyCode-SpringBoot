@@ -13,7 +13,10 @@ public class StudentServiceClass implements  StudentServiceInterface{
     @Autowired
     private StudentRepositary studentRepositary;
     @Override
-    public String addStudent(Student student) {
+    public String addStudent(Student student)
+    {
+
         return  studentRepositary.save(student).getUserName();
+
     }
 }
