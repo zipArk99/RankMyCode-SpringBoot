@@ -31,5 +31,6 @@ public class FacultyServiceClass implements FacultyServiceInterface{
     Contest c =contestRepositary.save(contest);
     System.out.println(facultyRepositary.findById(c.getContestCreatedBy()));
     return c;
+
   }
 }
