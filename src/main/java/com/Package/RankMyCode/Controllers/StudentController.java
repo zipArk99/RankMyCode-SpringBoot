@@ -1,5 +1,6 @@
 package com.Package.RankMyCode.Controllers;
 
+import com.Package.RankMyCode.Collections.Contest;
 import com.Package.RankMyCode.Collections.Student;
 import com.Package.RankMyCode.Services.StudentServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,15 @@ public class StudentController {
         return ResponseEntity.of(Optional.of(s));
     }
 
+    @PostMapping(value = "/batches",consumes ="application/json")
+    public ResponseEntity<List<Student>> getStudentsByBatchName(@RequestBody Contest contest){
+
+        List<Student> s= studentServiceObject.getStudentByBatchName(contest.getBatchEnrolled());
+        return ResponseEntity.of(Optional.of(s));
+    }
+
+
+    }
 
 
 
-
-
-}
