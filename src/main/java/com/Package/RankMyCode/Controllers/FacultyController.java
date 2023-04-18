@@ -2,6 +2,7 @@ package com.Package.RankMyCode.Controllers;
 
 import com.Package.RankMyCode.Collections.Contest;
 import com.Package.RankMyCode.Collections.Faculty;
+import com.Package.RankMyCode.Services.ContestServiceInterface;
 import com.Package.RankMyCode.Services.FacultyServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,8 @@ import java.util.Optional;
 public class FacultyController {
     @Autowired
     private FacultyServiceInterface facultyServiceObject;
+    @Autowired
+    private ContestServiceInterface contestServiceObject;
 
     @PostMapping(value = "/add", consumes = "application/json")
     public ResponseEntity<Faculty> addFaculty(@RequestBody Faculty faculty) {
@@ -36,7 +39,7 @@ public class FacultyController {
 
     @PostMapping(value = "/contest",consumes ="application/json")
     public ResponseEntity<Contest> createContest(@RequestBody Contest contest){
-        Contest c=facultyServiceObject.createContest(contest);
+        Contest c=contestServiceObject.createContest(contest);
         return ResponseEntity.of(Optional.of(c));
 
 

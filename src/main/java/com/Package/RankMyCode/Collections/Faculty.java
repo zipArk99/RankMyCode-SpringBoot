@@ -12,27 +12,6 @@ public class Faculty {
 
     @Id
     private String facultyId;
-    private String facultyEmailId;
-    private String password;
-
-    @Override
-    public String toString() {
-        return "Faculty{" +
-                "facultyId='" + facultyId + '\'' +
-                ", facultyEmailId='" + facultyEmailId + '\'' +
-                ", password='" + password + '\'' +
-                ", contestCreated=" + contestCreated +
-                '}';
-    }
-
-    private List<Contest> contestCreated;
-
-    public Faculty(String facultyId, String facultyEmailId, String password, List<Contest> contestCreated) {
-        this.facultyId = facultyId;
-        this.facultyEmailId = facultyEmailId;
-        this.password = password;
-        this.contestCreated = contestCreated;
-    }
 
     public String getFacultyId() {
         return facultyId;
@@ -50,6 +29,23 @@ public class Faculty {
         this.facultyEmailId = facultyEmailId;
     }
 
+    @Override
+    public String toString() {
+        return "Faculty{" +
+                "facultyId='" + facultyId + '\'' +
+                ", facultyEmailId='" + facultyEmailId + '\'' +
+                ", password='" + password + '\'' +
+                ", contestCreated=" + contestCreated +
+                '}';
+    }
+
+    public Faculty(String facultyId, String facultyEmailId, String password, List<String> contestCreated) {
+        this.facultyId = facultyId;
+        this.facultyEmailId = facultyEmailId;
+        this.password = password;
+        this.contestCreated = contestCreated;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -58,15 +54,17 @@ public class Faculty {
         this.password = password;
     }
 
-    public List<Contest> getContestCreated() {
+    public List<String> getContestCreated() {
         return contestCreated;
     }
 
-    public void setContestCreated(List<Contest> contestCreated) {
+    public void setContestCreated(List<String> contestCreated) {
         this.contestCreated = contestCreated;
     }
 
-
+    private String facultyEmailId;
+    private String password;
+    private List<String> contestCreated;
 
 
 }
