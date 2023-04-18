@@ -38,5 +38,8 @@ public class FacultyController {
     public ResponseEntity<Contest> createContest(@RequestBody Contest contest){
         Contest c=facultyServiceObject.createContest(contest);
         return ResponseEntity.of(Optional.of(c));
+
+
+
     }
 }

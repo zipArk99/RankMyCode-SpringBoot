@@ -1,9 +1,19 @@
 package com.Package.RankMyCode.Collections;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 import java.util.List;
 
+@Document(collection = "batch")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Batch {
+    @Id
     private String batchId;
+    @Field
+    private List<String> contestEnrolledList;
 
     public String getBatchId() {
         return batchId;
@@ -26,7 +36,6 @@ public class Batch {
         this.contestEnrolledList = contestEnrolledList;
     }
 
-    private List<String> contestEnrolledList;
 
 
 }

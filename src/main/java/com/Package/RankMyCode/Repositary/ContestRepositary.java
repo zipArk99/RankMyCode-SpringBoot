@@ -10,6 +10,4 @@ import java.util.List;
 @Repository
 public interface ContestRepositary extends MongoRepository<Contest,String> {
 
-    @Query()
-public List<String> getArray();
 }

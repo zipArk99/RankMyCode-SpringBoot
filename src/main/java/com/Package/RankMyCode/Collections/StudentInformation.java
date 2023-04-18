@@ -21,7 +21,7 @@ public class StudentInformation {
         this.leetcodeUsername = leetcodeUsername;
     }
 
-    public StudentInformation(String leetcodeUsername, String codeforceUsername, List<String> enrolledContest) {
+    public StudentInformation(String leetcodeUsername, String codeforceUsername) {
         this.leetcodeUsername = leetcodeUsername;
         this.codeforceUsername = codeforceUsername;
 
