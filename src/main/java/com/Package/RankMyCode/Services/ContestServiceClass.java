@@ -23,12 +23,15 @@ public class ContestServiceClass implements  ContestServiceInterface{
     private FacultyServiceInterface facultyServiceObject;
     @Override
     public Contest createContest(Contest contest) {
+        //inserting contest document
         Contest con =contestRepositary.save(contest);
         String contestId=con.getContestId();
 
         //adding contest to contest created List
         facultyServiceObject.addContestToContestCreatedList(con.getContestCreatedBy(),contestId);
 
+
+        //adding contest to batch collection
         List<String> tempStr=new ArrayList<>();
         for(String batchName : con.getBatchEnrolled()){
             tempStr.clear();
