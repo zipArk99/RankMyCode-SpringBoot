@@ -5,6 +5,7 @@ import com.Package.RankMyCode.Collections.Student;
 import java.util.List;
 import java.util.Optional;
 
+//this is student service interface
 public interface StudentServiceInterface {
     public String addStudent(Student student);
 
