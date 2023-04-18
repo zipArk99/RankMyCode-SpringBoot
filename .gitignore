@@ -3,6 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+A:\New Spring Boot Intellij\RankMyCode\RankMyCode\src\main\resources\application.properties
 
 ### STS ###
 .apt_generated
