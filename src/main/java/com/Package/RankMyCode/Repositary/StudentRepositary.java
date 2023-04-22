@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface StudentRepositary extends MongoRepository<Student,String> {
     public List<Student> findBybatchNumber(String batchList);
+
+
 }

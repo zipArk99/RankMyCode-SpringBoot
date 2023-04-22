@@ -54,4 +54,14 @@ public class ContestServiceClass implements  ContestServiceInterface{
         return con;
 
     }
+
+    @Override
+    public List<Contest> getListOfContest(Batch batch) {
+        List<String> contestId = batch.getContestEnrolledList();
+        List<Contest> contestList = new ArrayList<>();
+        for (String cId : contestId) {
+            contestList.add(contestRepositary.findById(cId).orElse(null));
+        }
+        return contestList;
+    }
 }

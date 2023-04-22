@@ -16,7 +16,7 @@ import java.util.Optional;
 public class StudentController {
 
     @Autowired
-    StudentServiceInterface studentServiceObject;
+    private StudentServiceInterface studentServiceObject;
     @PostMapping(value = "/add",consumes = "application/json")
     public ResponseEntity<String> addStudent(@RequestBody Student student){
         String std= studentServiceObject.addStudent(student);

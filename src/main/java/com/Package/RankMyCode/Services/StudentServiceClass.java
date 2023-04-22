@@ -23,6 +23,7 @@ public class StudentServiceClass implements  StudentServiceInterface{
             return studentRepositary.save(student).getUserName();
         }catch (Exception exception){
             return "error occured ::"+exception;
+
         }
 
     }
