@@ -3,6 +3,7 @@ package com.Package.RankMyCode.Services;
 import com.Package.RankMyCode.Collections.Batch;
 import com.Package.RankMyCode.Collections.Contest;
 import com.Package.RankMyCode.Collections.Faculty;
+import com.Package.RankMyCode.Collections.FacultyCredentials;
 import com.Package.RankMyCode.Repositary.BatchRepositary;
 import com.Package.RankMyCode.Repositary.ContestRepositary;
 import com.Package.RankMyCode.Repositary.FacultyRepositary;
@@ -27,6 +28,12 @@ public class FacultyServiceClass implements FacultyServiceInterface{
   public List<Faculty> getFacultyList() {
     return facultyRepositary.findAll();
   }
+
+    @Override
+    public Faculty getFaculty(FacultyCredentials facultyCredentials) {
+        return facultyRepositary.findByFacultyEmailIdAndPassword(facultyCredentials.getEmailId(),facultyCredentials.getPassword());
+
+    }
 
     @Override
     public void addContestToContestCreatedList(String facultyId, String contestId) {

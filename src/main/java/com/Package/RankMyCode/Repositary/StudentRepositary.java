@@ -2,6 +2,7 @@ package com.Package.RankMyCode.Repositary;
 
 import com.Package.RankMyCode.Collections.Student;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,6 +10,6 @@ import java.util.List;
 @Repository
 public interface StudentRepositary extends MongoRepository<Student,String> {
     public List<Student> findBybatchNumber(String batchList);
-    public Student findByStdCred(String email,String password);
+    public Student findByStdCred_EmailAndStdCred_Password(String email,String password);
 
 }

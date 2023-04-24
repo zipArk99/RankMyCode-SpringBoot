@@ -48,6 +48,8 @@ public class StudentServiceClass implements  StudentServiceInterface{
 
     @Override
     public Student getStudentByUsernameAndPassword(StudentCredentials studentCredentials) {
-        return studentRepositary.findByStdCred(studentCredentials.getEmail(),studentCredentials.getPassword());
+        return studentRepositary.findByStdCred_EmailAndStdCred_Password(studentCredentials.getEmail(),studentCredentials.getPassword());
     }
+
+
 }

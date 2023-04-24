@@ -2,6 +2,7 @@ package com.Package.RankMyCode.Controllers;
 
 import com.Package.RankMyCode.Collections.Contest;
 import com.Package.RankMyCode.Collections.Faculty;
+import com.Package.RankMyCode.Collections.FacultyCredentials;
 import com.Package.RankMyCode.Services.ContestServiceInterface;
 import com.Package.RankMyCode.Services.FacultyServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+//@CrossOrigin("localhost:")
 @RequestMapping("/faculty")
 public class FacultyController {
     @Autowired
@@ -44,5 +46,14 @@ public class FacultyController {
 
 
 
+    }
+
+    @PostMapping(value = "/getFaculty",consumes ="application/json" )
+    public ResponseEntity<Faculty> getFaculty(@RequestBody FacultyCredentials facultyCredentials){
+    Faculty faculty= facultyServiceObject.getFaculty(facultyCredentials);
+    if(faculty==null){
+        return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+    return ResponseEntity.of(Optional.of(faculty));
     }
 }
