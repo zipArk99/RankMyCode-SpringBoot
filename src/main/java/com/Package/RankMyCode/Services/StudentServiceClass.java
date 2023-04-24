@@ -1,7 +1,9 @@
 package com.Package.RankMyCode.Services;
 
 import com.Package.RankMyCode.Collections.Student;
+import com.Package.RankMyCode.Collections.StudentCredentials;
 import com.Package.RankMyCode.Repositary.StudentRepositary;
+import com.mongodb.BasicDBObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,5 +44,10 @@ public class StudentServiceClass implements  StudentServiceInterface{
             studentsList.addAll(studentRepositary.findBybatchNumber(batch));
         }
         return studentsList;
+    }
+
+    @Override
+    public Student getStudentByUsernameAndPassword(StudentCredentials studentCredentials) {
+        return studentRepositary.findByStdCred(studentCredentials.getEmail(),studentCredentials.getPassword());
     }
 }

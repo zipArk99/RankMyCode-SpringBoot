@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface StudentRepositary extends MongoRepository<Student,String> {
     public List<Student> findBybatchNumber(String batchList);
-
+    public Student findByStdCred(String email,String password);
 
 }

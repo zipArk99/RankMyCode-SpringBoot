@@ -1,6 +1,7 @@
 package com.Package.RankMyCode.Services;
 
 import com.Package.RankMyCode.Collections.Student;
+import com.Package.RankMyCode.Collections.StudentCredentials;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,4 +13,6 @@ public interface StudentServiceInterface {
     public Optional<Student> getStudentById (String id);
 
     List<Student> getStudentByBatchName(List<String> batchList);
+
+    public Student getStudentByUsernameAndPassword(StudentCredentials studentCredentials);
 }
